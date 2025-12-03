@@ -3,7 +3,7 @@ package main
 import "strconv"
 
 func day01() int {
-	puzzle_data, err := ReadLines("data/day01.txt")
+	puzzleData, err := ReadLines("data/day01.txt", "\n")
 	if err != nil {
 		panic(err)
 	}
@@ -11,7 +11,7 @@ func day01() int {
 	var position = 50
 	var zeroCount = 0
 
-	for _, line := range puzzle_data {
+	for _, line := range puzzleData {
 		// Parse the line which will be [R/L][Number]
 		value, err := strconv.Atoi(line[1:])
 		if err != nil {

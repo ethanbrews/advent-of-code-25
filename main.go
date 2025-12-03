@@ -8,6 +8,7 @@ import (
 
 var funcDayMap = []func() int{
 	day01,
+	day02,
 }
 
 func main() {
@@ -27,5 +28,5 @@ func main() {
 		}
 	}
 
-	print(funcDayMap[day-1]())
+	println(funcDayMap[day-1]())
 }
