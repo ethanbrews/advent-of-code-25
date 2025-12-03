@@ -1,14 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 	"time"
 )
 
-var funcDayMap = []func() int{
-	day01,
-	day02,
+var funcDayMap = [][]func() int{
+	{day01},
+	{day02Part1, day02Part2},
 }
 
 func main() {
@@ -28,5 +29,7 @@ func main() {
 		}
 	}
 
-	println(funcDayMap[day-1]())
+	for i, f := range funcDayMap[day-1] {
+		fmt.Printf("Day %d part %d: %d\n", day, i+1, f())
+	}
 }
