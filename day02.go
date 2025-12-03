@@ -13,7 +13,25 @@ func isValidPart1(id string) bool {
 }
 
 func isValidPart2(id string) bool {
-	return true
+	n := len(id)
+	for i := 1; i <= n/2; i++ { // only need to check up to half the string
+		if n%i != 0 {
+			continue
+		}
+		window := id[:i]
+		repeatCount := n / i
+		valid := true
+		for j := 1; j < repeatCount; j++ {
+			if id[j*i:(j+1)*i] != window {
+				valid = false
+				break
+			}
+		}
+		if valid {
+			return false // the string is a repetition
+		}
+	}
+	return true // no repeating pattern found
 }
 
 func day02Part1() int {
