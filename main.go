@@ -11,6 +11,7 @@ var funcDayMap = [][]func() int{
 	{day01},
 	{day02Part1, day02Part2},
 	{day03Part1, day03Part2},
+	{day04},
 }
 
 func main() {
